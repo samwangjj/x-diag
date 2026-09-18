@@ -1,0 +1,16 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 人类审批人（售后站长）：线框人像，安全帽 + 工牌，近白 #E8ECEF，1.5px 线框 -->
+  <rect width="96" height="96" rx="12" fill="#11151A"/>
+  <g stroke="#E8ECEF" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 安全帽 -->
+    <path d="M32 38 C32 28 39 22 48 22 C57 22 64 28 64 38 Z"/>
+    <path d="M28 40 H68"/>
+    <path d="M46 22 V18 H50 V22"/>
+    <!-- 肩/身体 -->
+    <path d="M30 74 C30 58 38 50 48 50 C58 50 66 58 66 74"/>
+    <!-- 工牌 -->
+    <rect x="52" y="58" width="12" height="9" rx="1.5"/>
+    <path d="M55 58 V55 H61 V58"/>
+    <path d="M55 61.5 H61 M55 64 H59" stroke-opacity="0.7"/>
+  </g>
+</svg>

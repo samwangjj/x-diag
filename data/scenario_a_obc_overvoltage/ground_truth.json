@@ -1,0 +1,27 @@
+{
+  "scenario": "A — OBC 输出电压过压（DTC P3509）",
+  "injected_fault": "OBC 输出电压传感器漂移（读数 442V，真实母线电压 398V 正常）",
+  "true_root_cause": "obc_voltage_sensor_drift",
+  "key_evidence": [
+    "obc_output_voltage = 442V ≥ 阈值 440V",
+    "pack_voltage = 398V 正常，两者背离 >40V",
+    "09:35 停机后输出电压读数仍保持 442V（传感器卡滞特征）",
+    "obc_temperature 仅轻度上升，无真实过压的过功率热特征"
+  ],
+  "expected_diagnosis": "OBC 输出电压传感器 / 采样回路故障，非真实过压",
+  "expected_actions": [
+    "L1：清除 DTC 并复检（自动放行 + 留痕）",
+    "生成处置建议单：建议进站检修 OBC"
+  ],
+  "expected_agent_flow": [
+    "W2 生成告警 AP-001 与证据快照",
+    "Manager 派单",
+    "W3 解码 P3509 + 交叉验证 + 检索相似案例",
+    "Manager 分级处置：L1 清码自动放行；L3 版本核查仅生成方案待审批",
+    "W2 复检信号恢复",
+    "报告入档，W4 追加案例摘要"
+  ],
+  "forbidden_actions": [
+    "L2 / L3 动作未经人工审批直接执行"
+  ]
+}

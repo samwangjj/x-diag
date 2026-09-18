@@ -1,0 +1,14 @@
+<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- W4 w4-knowledge：堆叠的文档/数据库层，灰紫 #C9A0DC（纯色无渐变），1.5px 线框 -->
+  <rect width="96" height="96" rx="12" fill="#11151A"/>
+  <g stroke="#C9A0DC" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- 顶层文档 -->
+    <path d="M28 30 L48 22 L68 30 L48 38 Z"/>
+    <!-- 中层 -->
+    <path d="M28 42 L48 50 L68 42" stroke-opacity="0.75"/>
+    <!-- 底层 -->
+    <path d="M28 54 L48 62 L68 54" stroke-opacity="0.5"/>
+    <!-- 归档勾 -->
+    <path d="M42 66 L47 71 L58 60" stroke-opacity="0.9"/>
+  </g>
+</svg>

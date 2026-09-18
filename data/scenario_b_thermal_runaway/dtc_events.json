@@ -1,0 +1,27 @@
+{
+  "vehicle": {
+    "vin": "LSVA0000DEMO00002",
+    "odometer_km": 18920
+  },
+  "events": [
+    {
+      "dtc": "BMS-TH01",
+      "description": "电池热失控预警（热事件）",
+      "naming_reference": "扩展 DTC，命名参照 ISO 15031-6 / SAE J2012（BMS 自定义热事件码）",
+      "severity": 3,
+      "status": "confirmed",
+      "set_time": "2026-08-16T14:25:12",
+      "clear_time": null,
+      "trigger_condition": "cell_temp_max ≥ 80℃（热失控预警阈值）",
+      "observed_value_c": 82.6,
+      "threshold_c": 80,
+      "freeze_frame": "freeze_frame.json",
+      "suspected_causes": [
+        "单体电芯内部短路",
+        "冷却系统失效",
+        "过充"
+      ],
+      "cross_check_hint": "真实热事件的判别 = 温度 / 电压 / 绝缘多通道同向恶化 + 降流后温升率不降 + 断充后零电流温升不止；与单传感器故障的区别在于多信号互证（对比场景 A 的 pack 背离逻辑：传感器故障时其余通道保持正常）"
+    }
+  ]
+}

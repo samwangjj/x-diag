@@ -1,0 +1,11 @@
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 工程网格纹理：40px 间距细线 + 每 200px 一条稍亮主线，可平铺 -->
+  <g stroke="rgba(255,255,255,0.025)" stroke-width="1">
+    <path d="M40 0 V400 M80 0 V400 M120 0 V400 M160 0 V400 M240 0 V400 M280 0 V400 M320 0 V400 M360 0 V400"/>
+    <path d="M0 40 H400 M0 80 H400 M0 120 H400 M0 160 H400 M0 240 H400 M0 280 H400 M0 320 H400 M0 360 H400"/>
+  </g>
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    <path d="M0 0 V400 M200 0 V400"/>
+    <path d="M0 0 H400 M0 200 H400"/>
+  </g>
+</svg>

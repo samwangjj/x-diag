@@ -1,0 +1,44 @@
+{
+  "trigger": {
+    "dtc": "P3509",
+    "set_time": "2026-08-15T09:31:32",
+    "condition": "obc_output_voltage ≥ 440V 持续 ≥ 5s"
+  },
+  "vehicle": {
+    "vin": "LSVA0000DEMO00001",
+    "odometer_km": 23456,
+    "model": "X-DEMO EV 400V 平台（合成）"
+  },
+  "environment": {
+    "ambient_temp_c": 32,
+    "charger": "7kW 交流慢充桩",
+    "location": {
+      "longitude": 120.155,
+      "latitude": 30.274
+    }
+  },
+  "signals": {
+    "charge_status": 1,
+    "ac_input_voltage": 219.3,
+    "ac_input_current": 34.83,
+    "obc_charge_power_kw": 7.28,
+    "obc_output_voltage": 441.61,
+    "obc_output_current": 16.49,
+    "obc_temperature": 57.0,
+    "pack_voltage": 398.1,
+    "pack_current": -16.16,
+    "soc": 60.77,
+    "cell_temp_max": 35.3,
+    "max_cell_voltage": 3.92,
+    "min_cell_voltage": 3.89,
+    "insulation_resistance": 2504.0,
+    "alarm_level": 2,
+    "vehicle_speed": 0.0,
+    "gear": "0",
+    "motor_status": "3",
+    "dtc_active": [
+      "P3509"
+    ],
+    "dtc_pending": []
+  }
+}

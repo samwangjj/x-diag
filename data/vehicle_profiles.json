@@ -1,0 +1,26 @@
+{
+  "LSVA0000DEMO00001": {
+    "vin": "LSVA0000DEMO00001",
+    "model": "X-DEMO EV（合成车型）",
+    "platform": "400V 纯电平台",
+    "battery": {"capacity_kwh": 60, "chemistry": "磷酸铁锂 LFP", "packs": 1},
+    "obc": {"rated_power_kw": 6.6, "rated_output_voltage_v": 400, "overvoltage_threshold_v": 440},
+    "motor": {"type": "永磁同步", "peak_power_kw": 150},
+    "odometer_km": 23456,
+    "first_registration": "2024-06-15",
+    "software": {"obc_firmware": "2.3.1", "bms_firmware": "5.1.0", "vcu_firmware": "3.0.4"},
+    "note": "全部为合成信息，不对应任何真实车型"
+  },
+  "LSVA0000DEMO00002": {
+    "vin": "LSVA0000DEMO00002",
+    "model": "X-DEMO EV（合成车型）",
+    "platform": "400V 纯电平台",
+    "battery": {"capacity_kwh": 60, "chemistry": "磷酸铁锂 LFP", "packs": 1},
+    "dc_fast_charge": {"max_power_kw": 120, "max_current_a": 110, "thermal_warning_threshold_c": 80},
+    "motor": {"type": "永磁同步", "peak_power_kw": 150},
+    "odometer_km": 18920,
+    "first_registration": "2024-09-02",
+    "software": {"bms_firmware": "5.2.0", "vcu_firmware": "3.0.4"},
+    "note": "全部为合成信息，不对应任何真实车型"
+  }
+}

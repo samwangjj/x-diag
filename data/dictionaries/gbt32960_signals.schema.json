@@ -1,0 +1,711 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GB/T 32960 公共信号字典 + 场景扩展信号",
+  "version": "0.1.0",
+  "sampling_hz": 1,
+  "conventions": {
+    "current_sign": "放电为正，充电为负",
+    "temperature_unit": "℃（GB/T 原始报文偏移 -40℃，本字典均为实际温度）",
+    "all_data_synthetic": "全部数据为合成数据，不含任何真实车辆信息"
+  },
+  "signals": [
+    {
+      "id": "vehicle_status",
+      "name": "车辆状态",
+      "source": "GB/T 32960 整车数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "1": "启动",
+        "2": "熄火",
+        "3": "其他状态"
+      },
+      "notes": ""
+    },
+    {
+      "id": "charge_status",
+      "name": "充电状态",
+      "source": "GB/T 32960 整车数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "1": "停车充电",
+        "2": "行驶充电",
+        "3": "未充电状态",
+        "4": "充电完成"
+      },
+      "notes": ""
+    },
+    {
+      "id": "run_mode",
+      "name": "运行模式",
+      "source": "GB/T 32960 整车数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "1": "纯电",
+        "2": "混动",
+        "3": "燃油"
+      },
+      "notes": ""
+    },
+    {
+      "id": "vehicle_speed",
+      "name": "车速",
+      "source": "GB/T 32960 整车数据",
+      "unit": "km/h",
+      "dtype": "float",
+      "range": [
+        0,
+        220
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "odometer",
+      "name": "累计里程",
+      "source": "GB/T 32960 整车数据",
+      "unit": "km",
+      "dtype": "float",
+      "range": [
+        0,
+        1000000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "total_voltage",
+      "name": "总电压",
+      "source": "GB/T 32960 整车数据",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        1000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "total_current",
+      "name": "总电流",
+      "source": "GB/T 32960 整车数据",
+      "unit": "A",
+      "dtype": "float",
+      "range": [
+        -1000,
+        1000
+      ],
+      "enum": null,
+      "notes": "放电为正，充电为负"
+    },
+    {
+      "id": "soc",
+      "name": "SOC",
+      "source": "GB/T 32960 整车数据",
+      "unit": "%",
+      "dtype": "float",
+      "range": [
+        0,
+        100
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "dcdc_status",
+      "name": "DC-DC 状态",
+      "source": "GB/T 32960 整车数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "1": "工作",
+        "2": "断开"
+      },
+      "notes": ""
+    },
+    {
+      "id": "gear",
+      "name": "挡位",
+      "source": "GB/T 32960 整车数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "0": "P",
+        "1": "R",
+        "2": "N",
+        "3": "D"
+      },
+      "notes": "GB/T 为位定义，此处简化为枚举"
+    },
+    {
+      "id": "insulation_resistance",
+      "name": "绝缘电阻",
+      "source": "GB/T 32960 整车数据",
+      "unit": "kΩ",
+      "dtype": "float",
+      "range": [
+        0,
+        60000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "accel_pedal_pct",
+      "name": "加速踏板行程",
+      "source": "GB/T 32960 整车数据",
+      "unit": "%",
+      "dtype": "float",
+      "range": [
+        0,
+        100
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "brake_pedal_pct",
+      "name": "制动踏板行程",
+      "source": "GB/T 32960 整车数据",
+      "unit": "%",
+      "dtype": "float",
+      "range": [
+        0,
+        100
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "motor_status",
+      "name": "驱动电机状态",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "1": "耗电",
+        "2": "发电",
+        "3": "关闭",
+        "4": "准备"
+      },
+      "notes": ""
+    },
+    {
+      "id": "motor_speed",
+      "name": "驱动电机转速",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": "r/min",
+      "dtype": "float",
+      "range": [
+        -20000,
+        20000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "motor_torque",
+      "name": "驱动电机转矩",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": "N·m",
+      "dtype": "float",
+      "range": [
+        -1000,
+        1000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "motor_temp",
+      "name": "驱动电机温度",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        200
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "motor_ctrl_temp",
+      "name": "电机控制器温度",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        200
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "motor_input_voltage",
+      "name": "驱动电机输入电压",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        1000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "motor_bus_current",
+      "name": "驱动电机母线电流",
+      "source": "GB/T 32960 驱动电机数据",
+      "unit": "A",
+      "dtype": "float",
+      "range": [
+        -1000,
+        1000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "longitude",
+      "name": "经度",
+      "source": "GB/T 32960 车辆位置",
+      "unit": "°",
+      "dtype": "float",
+      "range": [
+        -180,
+        180
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "latitude",
+      "name": "纬度",
+      "source": "GB/T 32960 车辆位置",
+      "unit": "°",
+      "dtype": "float",
+      "range": [
+        -90,
+        90
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "max_cell_sys_no",
+      "name": "最高电压电池子系统号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        250
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "max_cell_no",
+      "name": "最高电压单体代号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        65535
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "max_cell_voltage",
+      "name": "最高单体电压",
+      "source": "GB/T 32960 极值数据",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        65.535
+      ],
+      "enum": null,
+      "notes": "GB/T 原始单位 mV，此处换算为 V"
+    },
+    {
+      "id": "min_cell_sys_no",
+      "name": "最低电压电池子系统号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        250
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "min_cell_no",
+      "name": "最低电压单体代号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        65535
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "min_cell_voltage",
+      "name": "最低单体电压",
+      "source": "GB/T 32960 极值数据",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        65.535
+      ],
+      "enum": null,
+      "notes": "GB/T 原始单位 mV，此处换算为 V"
+    },
+    {
+      "id": "max_temp_sys_no",
+      "name": "最高温度子系统号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        250
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "max_temp_probe_no",
+      "name": "最高温度探针序号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        65535
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "max_cell_temp",
+      "name": "最高温度值",
+      "source": "GB/T 32960 极值数据",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        210
+      ],
+      "enum": null,
+      "notes": "GB/T 原始值偏移 -40℃，此处为实际温度"
+    },
+    {
+      "id": "min_temp_sys_no",
+      "name": "最低温度子系统号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        250
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "min_temp_probe_no",
+      "name": "最低温度探针序号",
+      "source": "GB/T 32960 极值数据",
+      "unit": null,
+      "dtype": "int",
+      "range": [
+        1,
+        65535
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "min_cell_temp",
+      "name": "最低温度值",
+      "source": "GB/T 32960 极值数据",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        210
+      ],
+      "enum": null,
+      "notes": "GB/T 原始值偏移 -40℃，此处为实际温度"
+    },
+    {
+      "id": "alarm_level",
+      "name": "最高报警等级",
+      "source": "GB/T 32960 报警数据",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "0": "无报警",
+        "1": "一级报警",
+        "2": "二级报警",
+        "3": "三级报警"
+      },
+      "notes": ""
+    },
+    {
+      "id": "alarm_flags",
+      "name": "通用报警标志",
+      "source": "GB/T 32960 报警数据",
+      "unit": null,
+      "dtype": "bitmap19",
+      "range": null,
+      "enum": null,
+      "notes": "19 位标志位，逐位定义见 alarm_flag_bits"
+    },
+    {
+      "id": "obc_output_voltage",
+      "name": "OBC 输出电压",
+      "source": "扩展 · OBC 充电",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        500
+      ],
+      "enum": null,
+      "notes": "场景 A 告警阈值 440V"
+    },
+    {
+      "id": "obc_output_current",
+      "name": "OBC 输出电流",
+      "source": "扩展 · OBC 充电",
+      "unit": "A",
+      "dtype": "float",
+      "range": [
+        0,
+        64
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "obc_temperature",
+      "name": "OBC 温度",
+      "source": "扩展 · OBC 充电",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        150
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "ac_input_voltage",
+      "name": "交流输入电压",
+      "source": "扩展 · OBC 充电",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        300
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "ac_input_current",
+      "name": "交流输入电流",
+      "source": "扩展 · OBC 充电",
+      "unit": "A",
+      "dtype": "float",
+      "range": [
+        0,
+        63
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "obc_charge_power_kw",
+      "name": "充电功率",
+      "source": "扩展 · OBC 充电",
+      "unit": "kW",
+      "dtype": "float",
+      "range": [
+        0,
+        22
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "pack_voltage",
+      "name": "电池包总电压",
+      "source": "扩展 · 电池包",
+      "unit": "V",
+      "dtype": "float",
+      "range": [
+        0,
+        1000
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "pack_current",
+      "name": "电池包总电流",
+      "source": "扩展 · 电池包",
+      "unit": "A",
+      "dtype": "float",
+      "range": [
+        -500,
+        500
+      ],
+      "enum": null,
+      "notes": "放电为正，充电为负"
+    },
+    {
+      "id": "cell_temp_max",
+      "name": "单体最高温度",
+      "source": "扩展 · 电池包",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        120
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "cell_temp_min",
+      "name": "单体最低温度",
+      "source": "扩展 · 电池包",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        120
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "cell_temp_delta",
+      "name": "单体温差",
+      "source": "扩展 · 电池包",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        0,
+        80
+      ],
+      "enum": null,
+      "notes": "热失控判据之一：温差 ≥15℃"
+    },
+    {
+      "id": "pack_pressure_kpa",
+      "name": "电池包气压",
+      "source": "扩展 · 电池包",
+      "unit": "kPa",
+      "dtype": "float",
+      "range": [
+        80,
+        150
+      ],
+      "enum": null,
+      "notes": "热失控排气前压力异常升高"
+    },
+    {
+      "id": "vent_gas_flag",
+      "name": "泄压气体检出",
+      "source": "扩展 · 电池包",
+      "unit": null,
+      "dtype": "enum",
+      "range": null,
+      "enum": {
+        "0": "未检出",
+        "1": "检出"
+      },
+      "notes": "热失控前兆特征信号"
+    },
+    {
+      "id": "cooling_inlet_temp",
+      "name": "冷却液入口温度",
+      "source": "扩展 · 电池包",
+      "unit": "℃",
+      "dtype": "float",
+      "range": [
+        -40,
+        80
+      ],
+      "enum": null,
+      "notes": ""
+    },
+    {
+      "id": "dtc_active",
+      "name": "当前确认 DTC 列表",
+      "source": "扩展 · 诊断",
+      "unit": null,
+      "dtype": "array<string>",
+      "range": null,
+      "enum": null,
+      "notes": "如 [\"P3509\"]"
+    },
+    {
+      "id": "dtc_pending",
+      "name": "待确认 DTC 列表",
+      "source": "扩展 · 诊断",
+      "unit": null,
+      "dtype": "array<string>",
+      "range": null,
+      "enum": null,
+      "notes": "未达到确认条件的暂存故障码"
+    }
+  ],
+  "alarm_flag_bits": {
+    "1": "温度差异报警",
+    "2": "电池高温报警",
+    "3": "车载储能装置类型过压报警",
+    "4": "车载储能装置类型欠压报警",
+    "5": "SOC 低报警",
+    "6": "单体电池过压报警",
+    "7": "单体电池欠压报警",
+    "8": "SOC 过高报警",
+    "9": "SOC 跳变报警",
+    "10": "可充电储能系统不匹配报警",
+    "11": "电池单体一致性差报警",
+    "12": "绝缘报警",
+    "13": "DC-DC 温度报警",
+    "14": "制动系统报警",
+    "15": "DC-DC 状态报警",
+    "16": "驱动电机控制器温度报警",
+    "17": "高压互锁状态报警",
+    "18": "驱动电机温度报警",
+    "19": "车载储能装置类型过充报警"
+  }
+}

@@ -1,0 +1,26 @@
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- 空状态：线框雷达/扫描圆环 + 中心车辆剪影，1px 线框，text-tertiary #5E6A75 -->
+  <g stroke="#5E6A75" stroke-width="1" fill="none">
+    <circle cx="120" cy="120" r="100"/>
+    <circle cx="120" cy="120" r="72"/>
+    <circle cx="120" cy="120" r="44"/>
+    <path d="M120 20 V220 M20 120 H220"/>
+    <path d="M120 120 L196 72" stroke-opacity="0.7"/>
+    <!-- 扫描扇形边界 -->
+    <path d="M120 120 L166 38" stroke-opacity="0.4" stroke-dasharray="3 3"/>
+  </g>
+  <!-- 中心车辆剪影（侧视线框） -->
+  <g stroke="#5E6A75" stroke-width="1" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M92 126 L98 114 H128 L138 122 L148 124 V132 H92 Z"/>
+    <circle cx="102" cy="132" r="4"/>
+    <circle cx="138" cy="132" r="4"/>
+    <path d="M108 114 L106 122 M124 114 L126 122"/>
+  </g>
+  <!-- 刻度点 -->
+  <g fill="#5E6A75">
+    <circle cx="120" cy="20" r="1.5"/>
+    <circle cx="220" cy="120" r="1.5"/>
+    <circle cx="120" cy="220" r="1.5"/>
+    <circle cx="20" cy="120" r="1.5"/>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+{
+  "vehicle": {
+    "vin": "LSVA0000DEMO00001",
+    "odometer_km": 23456
+  },
+  "events": [
+    {
+      "dtc": "P3509",
+      "description": "车载充电机（OBC）输出电压过压",
+      "naming_reference": "扩展 DTC，命名参照 ISO 15031-6 / SAE J2012",
+      "severity": 2,
+      "status": "confirmed",
+      "set_time": "2026-08-15T09:31:32",
+      "clear_time": null,
+      "trigger_condition": "obc_output_voltage ≥ 440V 持续 ≥ 5s",
+      "observed_value_v": 442,
+      "threshold_v": 440,
+      "freeze_frame": "freeze_frame.json",
+      "suspected_causes": [
+        "OBC 输出电压传感器漂移",
+        "OBC 采样线束虚接 / 退针",
+        "OBC 功率模块电压闭环异常"
+      ],
+      "cross_check_hint": "pack_voltage 维持 398V 正常，与 obc_output_voltage 背离 >40V，倾向传感器 / 采样回路故障而非真实过压"
+    }
+  ]
+}

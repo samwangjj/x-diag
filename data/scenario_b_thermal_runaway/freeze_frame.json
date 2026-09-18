@@ -1,0 +1,44 @@
+{
+  "trigger": {
+    "dtc": "BMS-TH01",
+    "set_time": "2026-08-16T14:25:12",
+    "condition": "cell_temp_max ≥ 80℃（热失控预警阈值）"
+  },
+  "vehicle": {
+    "vin": "LSVA0000DEMO00002",
+    "odometer_km": 18920,
+    "model": "X-DEMO EV 400V 平台（合成）"
+  },
+  "environment": {
+    "ambient_temp_c": 35,
+    "charger": "120kW 直流快充桩",
+    "location": {
+      "longitude": 120.155,
+      "latitude": 30.274
+    }
+  },
+  "signals": {
+    "charge_status": "stopped",
+    "ac_input_voltage": 0,
+    "ac_input_current": 0,
+    "obc_charge_power_kw": 0,
+    "obc_output_voltage": 0,
+    "obc_output_current": 0,
+    "obc_temperature": 35.5,
+    "pack_voltage": 396.62,
+    "pack_current": 0.0,
+    "soc": 77.0,
+    "cell_temp_max": 82.6,
+    "max_cell_voltage": 3.62,
+    "min_cell_voltage": 3.31,
+    "insulation_resistance": 1619.5,
+    "alarm_level": 3,
+    "vehicle_speed": 0.0,
+    "gear": "0",
+    "motor_status": "3",
+    "dtc_active": [
+      "BMS-TH01"
+    ],
+    "dtc_pending": []
+  }
+}
